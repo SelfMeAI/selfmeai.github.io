@@ -46,8 +46,18 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     animation: gradientFlow 4s linear infinite;
+}
+
+.tagline {
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: #e2e8f0;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    opacity: 0.95;
 }
 
 @keyframes gradientFlow {
@@ -56,10 +66,16 @@ body {
 }
 
 .coming-soon {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    color: #94a3b8;
-    letter-spacing: 0.3em;
+    display: inline-block;
+    font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+    font-weight: 500;
+    color: #0a1628;
+    background: linear-gradient(90deg, #00d4ff 0%, #0ea5e9 100%);
+    letter-spacing: 0.25em;
     text-transform: uppercase;
+    padding: 12px 32px;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
     animation: pulse 2s ease-in-out infinite;
 }
 
