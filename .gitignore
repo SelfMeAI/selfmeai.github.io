@@ -1,0 +1,22 @@
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器 / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 日志与临时文件
+*.log
+*.tmp
+.cache/
+
+# 本地环境（若以后用到）
+.env
+.env.local
+
+AGENTS.md
