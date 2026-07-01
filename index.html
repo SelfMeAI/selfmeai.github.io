@@ -31,6 +31,7 @@
                         <svg class="copy-icon copy-icon-success" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M5 12.5l4.25 4.25L19 7"></path>
                         </svg>
+                        <span class="copy-button-text">Copy</span>
                     </button>
                 </div>
             </div>
@@ -48,10 +49,14 @@
         const commandNode = document.getElementById('install-command');
 
         if (copyButton && commandNode) {
+            const labelNode = copyButton.querySelector('.copy-button-text');
             const setCopiedState = (copied) => {
                 copyButton.classList.toggle('is-copied', copied);
                 copyButton.setAttribute('aria-label', copied ? 'Copied' : 'Copy install command');
                 copyButton.setAttribute('title', copied ? 'Copied' : 'Copy install command');
+                if (labelNode) {
+                    labelNode.textContent = copied ? 'Copied' : 'Copy';
+                }
             };
 
             copyButton.addEventListener('click', async () => {

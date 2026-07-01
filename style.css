@@ -132,6 +132,15 @@ body {
     transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
 }
 
+.copy-button-text {
+    display: none;
+    line-height: 1;
+    font-size: 0.73rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
 .copy-button svg {
     width: 15px;
     height: 15px;
@@ -240,6 +249,13 @@ body {
 
     .copy-button {
         width: 100%;
+        gap: 8px;
+        padding: 0 14px;
+        justify-content: center;
+    }
+
+    .copy-button-text {
+        display: inline;
     }
 
     .secondary-link {
