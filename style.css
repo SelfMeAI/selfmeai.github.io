@@ -64,15 +64,114 @@ body {
     font-size: clamp(0.95rem, 2.2vw, 1.15rem);
     color: rgba(237, 244, 251, 0.72);
     letter-spacing: 0.04em;
-    margin-bottom: 34px;
+    margin-bottom: 26px;
 }
 
 .secondary-status {
-    margin-top: 18px;
+    margin-top: 16px;
     margin-bottom: 0;
     font-size: clamp(0.84rem, 1.9vw, 0.98rem);
     color: rgba(237, 244, 251, 0.56);
     letter-spacing: 0.03em;
+}
+
+.install-card {
+    width: 100%;
+    padding: 14px 14px 12px;
+    border: 1px solid rgba(60, 200, 255, 0.16);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(18, 32, 51, 0.94) 0%, rgba(12, 24, 40, 0.88) 100%);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.install-label {
+    margin-bottom: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(237, 244, 251, 0.58);
+}
+
+.install-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.install-row code {
+    flex: 1;
+    min-width: 0;
+    padding: 11px 13px;
+    border: 1px solid rgba(60, 200, 255, 0.18);
+    border-radius: 13px;
+    background: rgba(6, 14, 25, 0.84);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    font-family: 'SFMono-Regular', 'SF Mono', 'JetBrains Mono', Menlo, monospace;
+    font-size: 0.92rem;
+    color: #dff4ff;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.copy-button {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    min-width: 40px;
+    padding: 0;
+    border: 1px solid rgba(99, 184, 255, 0.22);
+    border-radius: 12px;
+    background: rgba(60, 200, 255, 0.08);
+    color: #dff4ff;
+    cursor: pointer;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.copy-button svg {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.copy-icon-success {
+    stroke-width: 2.1;
+}
+
+.copy-icon-success {
+    display: none;
+}
+
+.copy-button.is-copied {
+    border-color: rgba(123, 224, 182, 0.34);
+    background: rgba(123, 224, 182, 0.12);
+    color: #bff5dd;
+}
+
+.copy-button.is-copied .copy-icon-default {
+    display: none;
+}
+
+.copy-button.is-copied .copy-icon-success {
+    display: block;
+}
+
+.copy-button:hover {
+    transform: translateY(-1px);
+    border-color: rgba(99, 184, 255, 0.34);
+    background: rgba(60, 200, 255, 0.13);
+}
+
+.copy-button:active {
+    transform: translateY(0);
 }
 
 @keyframes gradientFlow {
@@ -81,35 +180,42 @@ body {
 }
 
 .actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    flex-wrap: wrap;
+    width: min(500px, calc(100vw - 48px));
+    margin: 0 auto;
 }
 
-.primary-link {
+.secondary-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 48px;
-    padding: 0 24px;
+    gap: 9px;
+    margin-top: 12px;
+    min-height: 42px;
+    padding: 0 18px;
     border-radius: 999px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-size: 0.82rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    color: #081321;
-    background: linear-gradient(90deg, #3cc8ff 0%, #63b8ff 100%);
-    box-shadow: 0 0 30px rgba(60, 200, 255, 0.24);
+    color: rgba(223, 244, 255, 0.96);
+    background: linear-gradient(180deg, rgba(60, 200, 255, 0.11) 0%, rgba(60, 200, 255, 0.06) 100%);
+    border: 1px solid rgba(99, 184, 255, 0.24);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
     text-decoration: none;
-    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
-.primary-link:hover {
+.secondary-link svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+    opacity: 0.92;
+}
+
+.secondary-link:hover {
     transform: translateY(-1px);
-    box-shadow: 0 0 34px rgba(60, 200, 255, 0.32);
-    filter: brightness(1.04);
+    border-color: rgba(99, 184, 255, 0.38);
+    background: linear-gradient(180deg, rgba(60, 200, 255, 0.15) 0%, rgba(60, 200, 255, 0.08) 100%);
 }
 
 @media (max-width: 480px) {
@@ -123,7 +229,20 @@ body {
         letter-spacing: 0.15em;
     }
     
-    .actions {
+    .install-card {
+        padding: 13px;
+    }
+
+    .install-row {
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    .copy-button {
+        width: 100%;
+    }
+
+    .secondary-link {
+        width: 100%;
     }
 }
