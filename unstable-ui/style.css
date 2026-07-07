@@ -298,33 +298,33 @@ body {
 @media (max-width: 640px) {
     body {
         justify-content: flex-start;
-        padding-top: calc(env(safe-area-inset-top, 0px) + 82px);
-        padding-bottom: 24px;
+        padding-top: calc(env(safe-area-inset-top, 0px) + 96px);
+        padding-bottom: 28px;
         overflow: auto;
     }
 
     .container {
         width: 100%;
-        padding-top: 24px;
+        padding-top: 30px;
     }
 
     .site-switch {
         left: 50%;
         right: auto;
-        top: calc(env(safe-area-inset-top, 0px) + 10px);
+        top: calc(env(safe-area-inset-top, 0px) + 8px);
         transform: translateX(-50%);
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 6px;
-        width: min(280px, calc(100vw - 24px));
-        padding: 5px;
+        gap: 4px;
+        width: min(248px, calc(100vw - 28px));
+        padding: 4px;
     }
 
     .site-switch-link {
-        min-height: 30px;
-        padding: 0 8px;
-        font-size: 0.68rem;
-        letter-spacing: 0.06em;
+        min-height: 28px;
+        padding: 0 7px;
+        font-size: 0.64rem;
+        letter-spacing: 0.04em;
     }
 
     .track-switch {
@@ -366,9 +366,21 @@ body {
 }
 
 @media (max-width: 480px) {
+    body {
+        padding-top: calc(env(safe-area-inset-top, 0px) + 104px);
+    }
+
+    .container {
+        padding-top: 34px;
+    }
+
     .logo {
         width: 146px;
         height: 146px;
+    }
+
+    .site-switch {
+        width: min(232px, calc(100vw - 24px));
     }
 
     .install-card {
