@@ -233,6 +233,62 @@ body {
     background: linear-gradient(180deg, rgba(60, 200, 255, 0.15) 0%, rgba(60, 200, 255, 0.08) 100%);
 }
 
+.link-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.secondary-link {
+    margin-top: 0;
+}
+
+
+.site-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px;
+    border-radius: 999px;
+    background: rgba(8, 16, 29, 0.42);
+    border: 1px solid rgba(99, 184, 255, 0.14);
+    backdrop-filter: blur(12px);
+}
+
+.site-switch-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 32px;
+    min-width: 0;
+    padding: 0 12px;
+    border-radius: 999px;
+    color: rgba(237, 244, 251, 0.68);
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 160ms ease, background 160ms ease;
+}
+
+.site-switch-link:hover {
+    color: rgba(237, 244, 251, 0.96);
+}
+
+.site-switch-link.is-active {
+    color: #0a1628;
+    background: rgba(237, 244, 251, 0.94);
+}
+
 @media (max-width: 640px) {
     body {
         justify-content: flex-start;
@@ -320,61 +376,4 @@ body {
     .secondary-link {
         width: 100%;
     }
-}
-
-
-.link-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 12px;
-}
-
-.secondary-link {
-    margin-top: 0;
-}
-
-
-.site-switch {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 6px 8px;
-    border-radius: 999px;
-    background: rgba(8, 16, 29, 0.42);
-    border: 1px solid rgba(99, 184, 255, 0.14);
-    backdrop-filter: blur(12px);
-}
-
-.site-switch-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 32px;
-    min-width: 0;
-    padding: 0 12px;
-    border-radius: 999px;
-    color: rgba(237, 244, 251, 0.68);
-    text-decoration: none;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: color 160ms ease, background 160ms ease;
-}
-
-.site-switch-link:hover {
-    color: rgba(237, 244, 251, 0.96);
-}
-
-.site-switch-link.is-active {
-    color: #0a1628;
-    background: rgba(237, 244, 251, 0.94);
 }
