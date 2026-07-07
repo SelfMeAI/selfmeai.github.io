@@ -234,21 +234,35 @@ body {
 }
 
 @media (max-width: 640px) {
+    body {
+        justify-content: flex-start;
+        padding-top: calc(env(safe-area-inset-top, 0px) + 82px);
+        padding-bottom: 24px;
+        overflow: auto;
+    }
+
+    .container {
+        width: 100%;
+        padding-top: 24px;
+    }
+
     .site-switch {
-        left: 12px;
-        right: 12px;
-        top: 12px;
-        transform: none;
+        left: 50%;
+        right: auto;
+        top: calc(env(safe-area-inset-top, 0px) + 10px);
+        transform: translateX(-50%);
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 6px;
-        width: auto;
-        padding: 6px;
+        width: min(280px, calc(100vw - 24px));
+        padding: 5px;
     }
 
     .site-switch-link {
-        padding: 0 10px;
-        letter-spacing: 0.08em;
+        min-height: 30px;
+        padding: 0 8px;
+        font-size: 0.68rem;
+        letter-spacing: 0.06em;
     }
 
     .install-row {
