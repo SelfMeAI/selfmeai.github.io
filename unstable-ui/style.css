@@ -36,6 +36,21 @@ body {
     overflow: hidden;
 }
 
+.logo,
+.brand-name,
+.tagline,
+.status-line,
+.install-label,
+.track-switch,
+.track-chip,
+.copy-button,
+.secondary-link,
+.site-switch,
+.site-switch-link {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
 .container {
     text-align: center;
     padding: 40px 20px;
