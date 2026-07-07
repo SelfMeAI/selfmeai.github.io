@@ -128,6 +128,7 @@ body {
     border-radius: 12px;
     background: rgba(60, 200, 255, 0.08);
     color: #dff4ff;
+    white-space: nowrap;
     cursor: pointer;
     transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
 }
@@ -139,6 +140,7 @@ body {
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .copy-button svg {
@@ -221,6 +223,10 @@ body {
     opacity: 0.92;
 }
 
+.secondary-link span {
+    white-space: nowrap;
+}
+
 .secondary-link:hover {
     transform: translateY(-1px);
     border-color: rgba(99, 184, 255, 0.38);
@@ -229,25 +235,20 @@ body {
 
 @media (max-width: 640px) {
     .site-switch {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
+        left: 12px;
+        right: 12px;
+        top: 12px;
+        transform: none;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        width: auto;
+        padding: 6px;
     }
-}
 
-@media (max-width: 480px) {
-    .logo {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-    }
-    
-    .brand-name {
-        letter-spacing: 0.15em;
-    }
-    
-    .install-card {
-        padding: 13px;
+    .site-switch-link {
+        padding: 0 10px;
+        letter-spacing: 0.08em;
     }
 
     .install-row {
@@ -264,6 +265,26 @@ body {
 
     .copy-button-text {
         display: inline;
+    }
+
+    .secondary-link {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+    
+    .brand-name {
+        letter-spacing: 0.15em;
+    }
+    
+    .install-card {
+        padding: 13px;
     }
 
     .secondary-link {
@@ -302,7 +323,9 @@ body {
 .site-switch-link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     min-height: 32px;
+    min-width: 0;
     padding: 0 12px;
     border-radius: 999px;
     color: rgba(237, 244, 251, 0.68);
@@ -311,6 +334,9 @@ body {
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition: color 160ms ease, background 160ms ease;
 }
 
