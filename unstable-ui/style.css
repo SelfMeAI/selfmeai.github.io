@@ -317,6 +317,11 @@ body {
     .site-switch-link:hover {
         color: rgba(237, 244, 251, 0.96);
     }
+
+    .site-switch-link.is-active:hover {
+        color: #0a1628;
+        background: rgba(237, 244, 251, 0.98);
+    }
 }
 
 @media (max-width: 640px) {
